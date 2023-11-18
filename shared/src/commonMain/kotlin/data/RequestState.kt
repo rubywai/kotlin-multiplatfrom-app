@@ -16,11 +16,6 @@ sealed class RequestState {
     @Serializable
     data class Error(val message: String) : RequestState()
 
-    fun isLoading(): Boolean = this is Loading
-    fun isSuccess(): Boolean = this is Success
-    fun isError(): Boolean = this is Error
-
     fun getProducts(): Products = (this as Success).data
 
-    fun getErrorMessage(): String = (this as Error).message
 }

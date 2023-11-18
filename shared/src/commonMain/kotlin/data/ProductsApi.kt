@@ -13,14 +13,6 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.serialization.json.Json
 
 class ProductsApi {
-    fun testProduct() = Product(
-        id = 1,
-        title = "My Product",
-        description = "My product description.",
-        category = "Man",
-        price = 100.0,
-        image = ""
-    )
     private val httpClient = HttpClient {
         install(ContentNegotiation) {
             json(Json {
